@@ -76,7 +76,7 @@ nav {
   text-align: center;
   padding: 0 1rem 4rem;
   overflow: hidden;
-  background-image: linear-gradient(180deg, rgba(10, 15, 29, 0.3), rgba(10, 15, 29, 0.68)), url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=85');
+  background-image: linear-gradient(180deg, rgba(10, 15, 29, 0.3), rgba(10, 15, 29, 0.68)), url('https://unsplash.com/photos/6sAl6aQ4OWI/download?force=true&w=1800');
   background-position: center;
   background-size: cover;
   border-radius: 0 0 50% 50% / 0 0 9% 9%;
