@@ -103,13 +103,13 @@ nav {
   max-width: 800px;
   font-family: 'Trebuchet MS', sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: #ffffff;
+  color: #ffd166;
   margin-bottom: 1rem;
   line-height: 1.15;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.65);
 }
 .hero p {
-  color: #f3f4f6;
+  color: #e6f7f5;
   max-width: 600px;
   font-size: 1.1rem;
   font-weight: 500;
