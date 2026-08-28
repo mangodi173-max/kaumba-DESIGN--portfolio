@@ -12,6 +12,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0;
   background: var(--bg);
@@ -21,12 +23,16 @@ body {
 }
 
 .contact-section {
+  position: fixed;
+  inset: 0;
   width: 100%;
+  height: 100vh;
   min-height: 100vh;
   padding: 4rem 2rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  overflow-y: auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -35,24 +41,40 @@ body {
   margin: 0 auto;
 }
 
+.contact-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(10, 15, 29, 0.92);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
 .back-home-btn {
   display: inline-block;
   margin-bottom: 2rem;
   padding: 0.7rem 1rem;
   border: 1px solid rgba(165, 180, 252, 0.45);
   border-radius: 6px;
-  background: rgba(99, 102, 241, 0.16);
-  color: #e6f7f5;
+  background: var(--accent);
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
+  box-shadow: 0 6px 18px var(--accent-glow);
   transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .back-home-btn:hover,
 .back-home-btn:focus-visible {
   border-color: #ffd166;
-  background: rgba(99, 102, 241, 0.32);
+  background: #4f46e5;
   color: #ffd166;
+  outline: 3px solid rgba(255, 209, 102, 0.4);
+  outline-offset: 3px;
   transform: translateY(-2px);
 }
 
@@ -80,7 +102,20 @@ body {
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 3rem 1.25rem;
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    padding: 2rem 1rem 3rem;
+    overflow-y: visible;
+    align-items: flex-start;
+  }
+
+  .contact-section .container {
+    width: 100%;
+  }
+
+  .contact-footer {
+    position: static;
   }
 
   .contact-header {
@@ -102,6 +137,12 @@ body {
 
   .contact-form {
     padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    min-width: 0;
   }
 }
 

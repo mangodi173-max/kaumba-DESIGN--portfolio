@@ -1,0 +1,212 @@
+:root {
+  --bg: #0a0f1d;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --highlight: #ffd166;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 3rem 1.25rem;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.22), transparent 34rem),
+    radial-gradient(circle at 90% 85%, rgba(255, 209, 102, 0.1), transparent 28rem);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pricing-page {
+  width: min(100%, 800px);
+  margin: 0 auto;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(165, 180, 252, 0.45);
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.16);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.back-home-btn:hover,
+.back-home-btn:focus-visible {
+  border-color: var(--highlight);
+  background: rgba(99, 102, 241, 0.32);
+  color: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.pricing-header {
+  margin-bottom: 2rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.pricing-header h1 {
+  margin: 0;
+  color: var(--highlight);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.pricing-header p:last-child {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+}
+
+th, td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background: rgba(99, 102, 241, 0.24);
+  color: var(--text);
+  font-weight: bold;
+}
+
+td:nth-child(1) {
+  color: var(--highlight);
+  font-weight: bold;
+  width: 40%;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+  color: var(--text);
+  width: 30%;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+tr:hover td {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.message-row td {
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.send-message-btn {
+  display: inline-block;
+  padding: 0.75rem 1.2rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.send-message-btn:hover,
+.send-message-btn:focus-visible {
+  background: #4f46e5;
+  box-shadow: 0 8px 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .back-home-btn {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-header {
+    margin-bottom: 1.5rem;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr:not(.message-row) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  tbody tr:not(.message-row) td {
+    width: auto;
+    padding: 0.35rem 0;
+    border: 0;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+
+  tbody tr:not(.message-row) td:first-child {
+    grid-column: 1 / -1;
+    padding-bottom: 0.15rem;
+    text-align: left;
+  }
+
+  tbody tr:not(.message-row) td:nth-child(2)::before,
+  tbody tr:not(.message-row) td:nth-child(3)::before {
+    margin-right: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  tbody tr:not(.message-row) td:nth-child(2)::before {
+    content: 'Basic';
+  }
+
+  tbody tr:not(.message-row) td:nth-child(3)::before {
+    content: 'Premium';
+  }
+
+  .message-row td {
+    padding: 1.1rem 0.75rem;
+  }
+
+  .send-message-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
